@@ -135,3 +135,44 @@ body {
     margin-bottom: 30px;
   }
 }
+.pulse {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  background: linear-gradient(#032263, #687aa1);
+  position: fixed;
+  margin: auto;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+}
+.pulse__icon {
+  color: #032263;
+  width: 40px;
+  height: 40px;
+}
+.pulse:before,
+.pulse:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #032263;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.7;
+}
+.pulse:before {
+  animation: pulse 2s ease-out infinite;
+}
+.pulse:after {
+  animation: pulse 2s 1s ease-out infinite;
+}
+@keyframes pulse {
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
